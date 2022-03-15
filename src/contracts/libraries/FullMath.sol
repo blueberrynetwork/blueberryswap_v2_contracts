@@ -14,10 +14,10 @@ library FullMath {
         uint256 h,
         uint256 d
     ) private pure returns (uint256) {
-        uint256 pow2 = d & type(uint8).max - d + 1;
+        uint256 pow2 = d & type(uint256).max - d + 1;
         d /= pow2;
         l /= pow2;
-        l += h * ((type(uint8).max - pow2 + 1) / pow2 + 1);
+        l += h * ((type(uint256).max - pow2 + 1) / pow2 + 1);
         uint256 r = 1;
         r *= 2 - d * r;
         r *= 2 - d * r;
